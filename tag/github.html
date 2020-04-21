@@ -1,72 +1,178 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="utf-8" />
-        <title>reazh::middle of the code - github</title>
-        <link rel="stylesheet" href="reazh.github.io/theme/css/main.css" />
-        <link href="reazh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="reazh::middle of the code Atom Feed" />
+    <meta charset="utf-8">
+    <title>reazh::middle of the code - github</title>
+    <meta name="description" content="">
+    <meta name="author" content="Reaz H.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+    <script src="reazh.github.io/theme/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="reazh.github.io/theme/bootstrap.min.css" rel="stylesheet">
+    <link href="reazh.github.io/theme/bootstrap.min.responsive.css" rel="stylesheet">
+    <link href="reazh.github.io/theme/local.css" rel="stylesheet">
+    <link href="reazh.github.io/theme/pygments.css" rel="stylesheet">
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="reazh.github.io/feeds/all.atom.xml" rel="alternate" title="reazh::middle of the code" type="application/atom+xml">
+
 </head>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="reazh.github.io/">reazh::middle of the code </a></h1>
-                <nav><ul>
-                    <li><a href="reazh.github.io/pages/about-me.html">About me</a></li>
-                    <li><a href="reazh.github.io/pages/contact.html">Contact</a></li>
-                    <li><a href="reazh.github.io/category/general.html">General</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<body>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="reazh.github.io/first-post.html">My first blog post!</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2019-10-31T13:51:00-04:00">
-                Published: Thu 31 October 2019
-        </abbr>
+<div class="navbar">
+    <div class="navbar-inner">
+    <div class="container">
 
-        <address class="vcard author">
-                By                         <a class="url fn" href="reazh.github.io/author/reaz-h.html">Reaz H.</a>
-        </address>
-<p>In <a href="reazh.github.io/category/general.html">General</a>.</p>
-<p>tags: <a href="reazh.github.io/tag/pelican.html">pelican</a> <a href="reazh.github.io/tag/publishing.html">publishing</a> <a href="reazh.github.io/tag/github.html">github</a> <a href="reazh.github.io/tag/git.html">git</a> </p>
-</footer><!-- /.post-info --><p>This is the content of my first blog post. I used the tutorial at <a href="https://www.thedigitalcatonline.com/blog/2019/06/07/run-a-pelican-blog/">TheDigitalCat's</a> blog to set up this blog. While I am not a novice at versioning nor git, I received a refresher and learned a thing or two in the process.</p>
+         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </a>
+
+        <a class="brand" href="reazh.github.io">reazh::middle of the code</a>
+
+        <div class="nav-collapse">
+        <ul class="nav">
+            
+            <li><a href="reazh.github.io/pages/about-me.html">About me</a></li>
+            <li><a href="reazh.github.io/pages/contact.html">Contact</a></li>
+        </ul>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="content">
+    <div class="row">
+
+        <div class="span9">
+        
+
+        
+
+
+    <div class='article'>
+        <div class="content-title">
+            <a href="reazh.github.io/first-post.html"><h1>My first blog post!</h1></a>
+Thu 31 October 2019
+
+by <a class="url fn" href="reazh.github.io/author/reaz-h.html">Reaz H.</a>
+ 
+
+
+ 
+        </div>
+        
+        <div><p>This is the content of my first blog post. I used the tutorial at <a href="https://www.thedigitalcatonline.com/blog/2019/06/07/run-a-pelican-blog/">TheDigitalCat's</a> blog to set up this blog. While I am not a novice at versioning nor git, I received a refresher and learned a thing or two in the process.</p>
 <p>TheDigitalCat has published a Pelican template on Github. Using the Cookiecutter package, one can replicate the templateand get a blog up and running in no time. However, as usual I ran into some issues. Here's what I learned:</p>
 <ul>
-<li><strong>Be aware of your private network limitations:</strong> I tried to set this up at work and for the longest time I could not push the blog onto GitHub. I realized eventually that the issue maybe that external ssh access may be blocked (with good reason). </li>
-<li><strong>Make certain to have a valid ssh key registered with GitHub:</strong> Use the instructions on <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a> to setup and store your ssh key. This will enable you to <code>git push</code> code to your repository.</li>
-<li><strong>Always have a separate <strong><em>develop</em></strong> and <strong><em>deploy</em></strong> workspace:</strong> <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">TheDigitalCat</a> uses this method to keep his production blog code clean from development bugs, etc. All the development code is tested using a local server. Once the blog post/page looks ideal, they are committed to the repository and pushed to GitHub from where they are served. </li>
-<li><strong> Try to do a <code>git pull</code> to merge existing code before you do a <code>git push</code>:</strong> The tutorial does not state this but I found myself having to do this the first few times I tried to publish. It shouldn't be the case since I am the only author but perhaps I tickled some file in GitHub. </li>
+<li>
+<p><strong>Be aware of your private network limitations:</strong> I tried to set this up at work and for the longest time I could not push the blog onto GitHub. I realized eventually that the issue maybe that external ssh access may be blocked (with good reason). </p>
+</li>
+<li>
+<p><strong>Make certain to have a valid ssh key registered with GitHub:</strong> Use the instructions on <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">GitHub</a> to setup and store your ssh key. This will enable you to <code>git push</code> code to your repository.</p>
+</li>
+<li>
+<p><strong>Always have a separate <strong><em>develop</em></strong> and <strong><em>deploy</em></strong> workspace:</strong> <a href="https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent">TheDigitalCat</a> uses this method to keep his production blog code clean from development bugs, etc. All the development code is tested using a local server. Once the blog post/page looks ideal, they are committed to the repository and pushed to GitHub from where they are served. </p>
+</li>
+<li>
+<p><strong> Try to do a <code>git pull</code> to merge existing code before you do a <code>git push</code>:</strong> The tutorial does not state this but I found myself having to do this the first few times I tried to publish. It shouldn't be the case since I am the only author but perhaps I tickled some file in GitHub. </p>
+</li>
 </ul>
-<p>I am still finding my way around Pelican and <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>. In days to come, I hope to update some of these posts and pages. I will be linking my repositories on GitHub with explanations soon. While I created this blog to showcase all things related to topics in Computer Science and Engineering, I will also post about unrelated topics as they catch my interest. </p>                </article>
-            </aside><!-- /#featured -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>links</h2>
-                        <ul>
-                            <li><a href="http://getpelican.com/">Pelican</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="reazh.github.io/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+<p>I am still finding my way around Pelican and <a href="https://www.markdownguide.org/cheat-sheet/">Markdown</a>. In days to come, I hope to update some of these posts and pages. I will be linking my repositories on GitHub with explanations soon. While I created this blog to showcase all things related to topics in Computer Science and Engineering, I will also post about unrelated topics as they catch my interest. </p></div>
+        <hr />
+    </div>
+		
+<div class="pagination">
+<ul>
+    <li class="prev disabled"><a href="#">&larr; Previous</a></li>
 
-                            <li><a href="http://www.linkedin.com/in/reazh">LinkedIn</a></li>
-                            <li><a href="http://github.com/reazh">GitHub</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+    <li class="active"><a href="reazh.github.io/tag/github.html">1</a></li>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+    <li class="next disabled"><a href="#">&rarr; Next</a></li>
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
+</ul>
+</div>
+ 
+  
+        </div>
+        
+        <div class="span3">
 
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Site
+                </li>
+            
+                <li><a href="reazh.github.io/archives.html">Archives</a>
+                <li><a href="reazh.github.io/tags.html">Tags</a>
+
+
+
+                <li><a href="reazh.github.io/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Categories
+                </li>
+                
+                <li><a href="reazh.github.io/category/ai.html">AI</a></li>
+                <li><a href="reazh.github.io/category/general.html">General</a></li>
+                   
+            </ul>
+            </div>
+
+
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Links
+                </li>
+            
+                <li><a href="http://getpelican.com/">Pelican</a></li>
+                <li><a href="http://python.org/">Python.org</a></li>
+                <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+            </ul>
+            </div>
+
+
+            <div class="social">
+            <div class="well" style="padding: 8px 0; background-color: #FBFBFB;">
+            <ul class="nav nav-list">
+                <li class="nav-header"> 
+                Social
+                </li>
+           
+                <li><a href="http://www.linkedin.com/in/reazh">LinkedIn</a></li>
+                <li><a href="http://github.com/reazh">GitHub</a></li>
+            </ul>
+            </div>
+            </div>
+
+        </div>  
+    </div>     </div> 
+<footer>
+<br />
+<p><a href="reazh.github.io">reazh::middle of the code</a> &copy; Reaz H. 2019</p>
+</footer>
+
+</div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script src="reazh.github.io/theme/bootstrap-collapse.js"></script>
+ 
 </body>
 </html>
